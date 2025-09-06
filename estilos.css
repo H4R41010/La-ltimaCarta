@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Fuente moderna y limpia */
+    background: linear-gradient(135deg, #2c1b47 0%, #3a1c71 50%, #4b0082 100%); /* Degradado dinámico morado */
+    min-height: 100vh;
+    color: #f3e8ff; /* Texto en morado claro para contraste */
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #4b0082 0%, #8b5cf6 100%); /* Degradado morado vibrante */
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3); /* Sombra con tinte morado */
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 70%); /* Efecto de brillo */
+    opacity: 0.5;
+}
+
+h1 {
+    font-size: 2.8em;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.7), 0 0 20px rgba(139, 92, 246, 0.4); /* Efecto neón */
+    font-family: 'Playfair Display', serif; /* Fuente elegante para el título */
+    position: relative;
+    z-index: 1;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.media-item {
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.5); /* Sombra con tinte morado neón */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    background: linear-gradient(145deg, #3a1c71, #5b21b6); /* Fondo degradado para cada elemento */
+    position: relative;
+}
+
+.media-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.8), 0 0 40px rgba(139, 92, 246, 0.4); /* Efecto neón al hover */
+}
+
+.media-item img,
+.media-item video {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    transition: border 0.3s ease;
+}
+
+.media-item:hover img,
+.media-item:hover video {
+    border: 2px solid #c4b5fd; /* Borde morado claro al hover */
+}
+
+.button-container {
+    text-align: center;
+    padding: 30px;
+}
+
+.carta-button {
+    display: inline-block;
+    padding: 18px 40px;
+    background: linear-gradient(135deg, #8b5cf6, #c4b5fd); /* Degradado morado moderno */
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.carta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.4s ease;
+}
+
+.carta-button:hover::before {
+    left: 100%;
+}
+
+.carta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.8);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(43, 30, 71, 0.9), rgba(75, 0, 130, 0.9)); /* Fondo degradado para modal */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.close-button {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #c4b5fd; /* Morado claro */
+    font-size: 2.8em;
+    cursor: pointer;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.7);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close-button:hover {
+    color: #f3e8ff; /* Morado más claro */
+    transform: scale(1.2);
+}
+
+.modal-content img,
+.modal-content video {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border: 3px solid #8b5cf6; /* Borde morado neón */
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+}
+/* ... (estilos existentes) ... */
+.audio-button {
+    margin-top: 20px;
+}
+
+.audio-button button {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #8b5cf6, #c4b5fd); /* Degradado morado moderno */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.audio-button button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.8);
+}
